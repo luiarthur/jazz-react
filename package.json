@@ -1,0 +1,38 @@
+{
+  "name": "jazz",
+  "version": "0.1.0",
+  "description": "Jazz Notes",
+  "scripts": {
+    "start": "esbuild src/main.jsx --bundle --servedir=public/ --outdir=public --watch",
+    "build": "esbuild src/main.jsx --bundle --outdir=dist --minify",
+    "prebuild": "mkdir -p dist && cp public/index.html dist",
+    "deploy": "gh-pages --dist=dist --branch=gh-pages",
+    "predeploy": "npm run build",
+    "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luiarthur/jazz-react.git"
+  },
+  "keywords": [
+    "jazz",
+    "scales",
+    "improvisation",
+    "exercises"
+  ],
+  "author": "Arthur Lui",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/luiarthur/jazz-react/issues"
+  },
+  "homepage": "https://github.com/luiarthur/jazz-react#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "esbuild": "^0.17.18",
+    "gh-pages": "^5.0.0"
+  }
+}
